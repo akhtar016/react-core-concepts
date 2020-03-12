@@ -5,10 +5,10 @@ import './App.css';
 function App() {
 
   const products = [
-    {name:'Photography',price:'9.99',imageLink:''},
-    {name:'All Apps',price:'52.99'},
-    {name:'Photoshop',price:'20.99'},
-    {name:'Illustrator',price:'20.99'}
+    {name:'Photography',price:'9.99',description:'Get Lightroom, Lightroom Classic, Photoshop, and 20GB of cloud storage (1TB available).',imageLink:'https://www.adobe.com/content/dam/shared/images/product-icons/svg/lightroom.svg'},
+    {name:'All Apps',price:'52.99', description:'Get all 20+ creative desktop and mobile apps including Photoshop, Illustrator, InDesign, Premiere Pro, and XD.', imageLink:'https://www.adobe.com/content/dam/shared/images/product-icons/svg/creative-cloud.svg'},
+    {name:'Photoshop',price:'20.99',description:'Create beautiful graphics, photos, and art anywhere.', imageLink:'https://www.adobe.com/content/dam/shared/images/product-icons/svg/photoshop.svg'},
+    {name:'Illustrator',price:'20.99' , description:"Create beautiful vector art and illustrations.",imageLink:'https://www.adobe.com/content/dam/shared/images/product-icons/svg/illustrator.svg'}
      ]
 
  
@@ -30,7 +30,7 @@ function App() {
 
 function Product(props){
 
-  const {name, price} = props.product;
+  const {name, price,description,imageLink} = props.product;
 
 
   const productStyle={
@@ -53,13 +53,17 @@ function Product(props){
 
 
 
-      <img src="" alt="" height="25" width="25"/>
+      <img src={imageLink} alt="" height="25" width="25"/>
 
 
 
       <h4 style={{marginTop:'5px',marginBottom:'0px'}}>{name}</h4>
       <p  style={{marginTop:'10px', marginBottom:'0px'}}>US${price}<span style={{fontSize:'15px'}}>/mo</span></p>
-      <p style={{fontSize:'15px', marginTop:'10px',marginBottom:'0px'}}>Get Lightroom, Lightroom Classic, Photoshop, and 20GB of cloud storage(1TB available).</p>
+
+      <p style={{fontSize:'15px', marginTop:'10px',marginBottom:'0px'}}>{description}</p>
+
+
+
       <a style={{textDecoration:'none',fontSize:'15px'}} href="https://www.adobe.com/plans-fragments/modals/individual/photography/master.html">See plan & pricing details</a>
       <br/>
 
